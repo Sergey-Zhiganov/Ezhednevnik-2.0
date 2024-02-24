@@ -1,0 +1,34 @@
+﻿<Window x:Class="Ежедневник_2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ежедневник_2._0"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DatePicker x:Name="chosendate" Grid.ColumnSpan="2" Margin="0,0,10,0" FontSize="24" FirstDayOfWeek="Monday" SelectedDateChanged="chosendate_SelectedDateChanged"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Height="62" Width="404" Grid.Column="1" FontSize="36" TextAlignment="Center" Text="Название:"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" Height="62" Width="404" FontSize="36" TextAlignment="Center" Grid.Column="1" Text="Описание:"/>
+        <TextBox x:Name="name_event" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="343" Height="61" FontSize="36" Grid.Column="1"/>
+        <TextBox x:Name="description_event" HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Width="343" Height="62" FontSize="36" Grid.Column="1" BorderBrush="Black"/>
+        <Button Content="Удалить запись" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Height="62" Width="400" FontSize="36" Click="Button_Click_2"/>
+        <Button Grid.Column="1" Content="Создать" HorizontalAlignment="Left" Margin="1,0,0,0" Grid.Row="6" VerticalAlignment="Center" Height="62" Width="199" FontSize="36" Click="Button_Click"/>
+        <Button Grid.Column="1" Content="Сохранить" HorizontalAlignment="Left" Margin="202,0,0,0" Grid.Row="6" VerticalAlignment="Center" Height="62" Width="199" FontSize="36" Click="Button_Click_1"/>
+        <ListBox x:Name="list_events" Margin="0,62,0,5" Grid.RowSpan="6" DisplayMemberPath="Name" SelectionChanged="list_events_Selected" FontSize="24"/>
+
+    </Grid>
+</Window>
